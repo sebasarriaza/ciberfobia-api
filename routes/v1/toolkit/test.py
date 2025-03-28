@@ -20,7 +20,7 @@ def test_api(job_id, data):
         # Create test file
         test_filename = os.path.join(STORAGE_PATH, "success.txt")
         with open(test_filename, 'w') as f:
-            f.write("You have successfully installed the NCA Toolkit API, great job!")
+            f.write("You have successfully installed the Ciberfobia API, great job!")
         
         # Upload file to cloud storage
         upload_url = upload_file(test_filename)
