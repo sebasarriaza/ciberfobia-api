@@ -141,8 +141,8 @@ Mira **[Instrucciones Detalladas](https://youtu.be/6bC93sek9v8)** para configura
 
 ### Recursos de Video
 
-- **[Plantilla Postman](...)**
-- **[Ciberfobia-api GPT](...)**
+- **Plantilla Postman** proximamente
+- **Ciberfobia-api GPT** proximamente
 
 ---
 
@@ -182,10 +182,10 @@ Habilita las siguientes APIs:
 2. Haz clic en **+ Crear Cuenta de Servicio**.
    - Ingresa un nombre, por ejemplo, `Cuenta de Servicio Ciberfobia`.
 3. Asigna los roles:
-   - Storage Admin
-   - Viewer
+   - **Storage Admin** (Administrador de objetos de Storage).
+   - **Viewer** (Visualizador).
 4. Haz clic en **Listo**.
-5. En los detalles de la cuenta, en la pestaña **Claves**, haz clic en **Agregar Clave** > **Crear Nueva Clave** (formato JSON). Descarga y guarda el archivo de forma segura.
+5. En los detalles de la cuenta, en la pestaña **Claves**, haz clic en **Agregar Clave** > **Crear Nueva Clave** (formato JSON). Descarga y guarda el archivo de forma segura (lo usaremos después).
 
 ---
 
@@ -197,7 +197,7 @@ Habilita las siguientes APIs:
      - Desmarcar **Forzar prevención de acceso público**.
      - Configurar **Control de Acceso** como **Uniforme**.
 3. Haz clic en **Crear**.
-4. En los permisos del bucket, agrega **allUsers** con el rol **Storage Object Viewer**.
+4. En los permisos del bucket, agrega **allUsers** con el rol **Storage Object Viewer** (Visualizador de objetos de Storage).
 
 ---
 
