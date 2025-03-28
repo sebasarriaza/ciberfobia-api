@@ -139,7 +139,7 @@ Mira video (proximamente) para configurar Ciberfobia-api en GCP.
   internetesfera/ciberfobia-api:latest
   ```
 
-### Recursos de Video
+### Recursos adicionales
 
 - **Plantilla Postman** proximamente
 - **Ciberfobia-api GPT** proximamente
