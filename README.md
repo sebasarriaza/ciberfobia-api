@@ -1,6 +1,3 @@
-
-![Logo Original](...)
-
 # Ciberfobia-api
 
 ¿Cansado de gastar miles de dólares en suscripciones de API para automatizar tus procesos? ¿Qué tal si existiera una alternativa 100% GRATUITA?  
@@ -12,11 +9,11 @@
 
 La API realiza diversas tareas relacionadas con la manipulación de medios, siempre con una robusta validación de datos y documentación detallada para facilitar su integración.
 
-### 🎬 Manipulación Avanzada de Medios
+### 🎮 Manipulación Avanzada de Medios
 
 #### 1. `/v1/ffmpeg/compose`
 - **Descripción**: Permite componer y manipular archivos multimedia utilizando FFmpeg, soportando operaciones complejas como transcodificación, concatenación y filtrado.
-- **Documentación**: [FFmpeg Compose Documentation](...)
+- **Documentación**: [FFmpeg Compose Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/ffmpeg/ffmpeg_compose.md)
 
 ---
 
@@ -24,11 +21,11 @@ La API realiza diversas tareas relacionadas con la manipulación de medios, siem
 
 #### 2. `/v1/video/caption`
 - **Descripción**: Añade subtítulos a un video, con opciones para configurar fuente, posición y estilo. Soporta detección automática del idioma y reemplazos personalizados.
-- **Documentación**: [Video Caption Documentation](...)
+- **Documentación**: [Video Caption Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/video/caption_video.md)
 
 #### 3. `/v1/video/concatenate`
 - **Descripción**: Combina múltiples archivos de video en uno solo, respetando el orden especificado, y sube el resultado al almacenamiento en la nube.
-- **Documentación**: [Video Concatenate Documentation](...)
+- **Documentación**: [Video Concatenate Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/video/concatenate.md)
 
 ---
 
@@ -36,7 +33,7 @@ La API realiza diversas tareas relacionadas con la manipulación de medios, siem
 
 #### 4. `/v1/code/execute/python`
 - **Descripción**: Ejecuta código Python en el servidor en un entorno controlado, ideal para scripting, prototipos o ejecución dinámica de scripts.
-- **Documentación**: [Execute Python Documentation](...)
+- **Documentación**: [Execute Python Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/code/execute/execute_python.md)
 
 ---
 
@@ -44,7 +41,7 @@ La API realiza diversas tareas relacionadas con la manipulación de medios, siem
 
 #### 5. `/v1/image/transform/video`
 - **Descripción**: Convierte una imagen en un archivo de video, con opciones configurables como duración, velocidad de fotogramas y efectos de zoom, perfecto para crear presentaciones.
-- **Documentación**: [Image to Video Documentation](...)
+- **Documentación**: [Image to Video Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/image/transform/image_to_video.md)
 
 ---
 
@@ -52,23 +49,23 @@ La API realiza diversas tareas relacionadas con la manipulación de medios, siem
 
 #### 6. `/v1/media/transform/mp3`
 - **Descripción**: Transforma archivos multimedia a formato MP3, con opciones avanzadas para configurar la tasa de bits y la frecuencia de muestreo.
-- **Documentación**: [Media Transform to MP3 Documentation](...)
+- **Documentación**: [Media Transform to MP3 Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/media/transform/media_to_mp3.md)
 
 #### 7. `/v1/media/transcribe`
 - **Descripción**: Transcribe archivos de audio a texto usando procesamiento avanzado de reconocimiento de voz, soportando varios idiomas y formatos.
-- **Documentación**: [Audio Transcribe Documentation](...)
+- **Documentación**: [Audio Transcribe Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/media/media_transcribe.md)
 
 ---
 
-### 🔧 Funciones Básicas
+### ⚖️ Funciones Básicas
 
 #### 8. `/v1/toolkit/test`
 - **Descripción**: Un endpoint básico para verificar la disponibilidad y el correcto funcionamiento de la API. Útil para pruebas iniciales.
-- **Documentación**: [Test Endpoint Documentation](...)
+- **Documentación**: [Test Endpoint Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/toolkit/test.md)
 
 #### 9. `/v1/toolkit/authenticate`
 - **Descripción**: Verifica la API key proporcionada y autentica al usuario, retornando un mensaje de éxito si la autenticación es correcta.
-- **Documentación**: [Authenticate Endpoint Documentation](...)
+- **Documentación**: [Authenticate Endpoint Documentation](https://github.com/internetesfera/ciberfobia-api/blob/main/docs/toolkit/authenticate.md)
 
 ---
 
@@ -254,7 +251,7 @@ Habilita las siguientes APIs:
 
 ---
 
-## 💬 Soporte
+## 📜 Soporte
 
 Si necesitas ayuda, obtén cursos, únete a la comunidad y participa en llamadas diarias.  
 Únete a la **[Comunidad Ciberfobia](https://www.skool.com/ciberfobia)** hoy mismo.
