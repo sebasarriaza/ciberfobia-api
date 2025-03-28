@@ -132,7 +132,7 @@ docker run -d -p 8080:8080 \
 
 ### 📹 Instrucciones en Video
 
-Mira **[Instrucciones Detalladas](https://youtu.be/6bC93sek9v8)** para configurar Ciberfobia-api en GCP.
+Mira video (proximamente) para configurar Ciberfobia-api en GCP.
 
 - Utiliza la imagen Docker:
   ```
