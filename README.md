@@ -1,6 +1,9 @@
 # Ciberfobia-api
 
-¿Cansado de gastar miles de dólares en suscripciones de API para automatizar tus procesos? ¿Qué tal si existiera una alternativa 100% GRATUITA?  
+¿Cansado de gastar miles de dólares en suscripciones de API para automatizar tus procesos? 
+
+¿Qué tal si existiera una alternativa 100% GRATUITA?  
+
 **Ciberfobia-api** es una API de procesamiento multimedia, construida en Python con Flask, que te permite convertir archivos de audio, generar transcripciones, traducir contenido, añadir subtítulos a videos y mucho más.
 
 ---
