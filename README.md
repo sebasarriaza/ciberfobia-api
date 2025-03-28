@@ -136,7 +136,7 @@ Mira **[Instrucciones Detalladas](https://youtu.be/6bC93sek9v8)** para configura
 
 - Utiliza la imagen Docker:
   ```
-  internetesfera/no-code-architects-toolkit:latest
+  internetesfera/ciberfobia-api:latest
   ```
 
 ### Recursos de Video
@@ -205,7 +205,7 @@ Habilita las siguientes APIs:
 1. Accede al servicio **Cloud Run** en la Consola de GCP.
 2. Haz clic en **Crear Servicio** y selecciona **Desplegar una revisión desde Docker Hub** utilizando la imagen:
    ```
-   stephengpope/no-code-architects-toolkit:latest
+   internetesfera/ciberfobia-api:latest
    ```
 3. Permite invocaciones no autenticadas.
 4. Configura la asignación de recursos:
@@ -227,14 +227,14 @@ Habilita las siguientes APIs:
 
 ---
 
-### Paso 6: Probar el Despliegue
-1. Instala **[Plantilla Postman](...)**.
+### Paso 6: Probar el Despliegue (proximamente)
+1. Instala **Postman**.
 2. Importa los ejemplos de peticiones de la API.
 3. Configura en Postman las variables:
    - `base_url`: URL de tu servicio en Cloud Run.
    - `x-api-key`: Tu API key configurada.
 4. Ejecuta las peticiones de ejemplo para verificar el funcionamiento.
-5. Consulta **[Ciberfobia-api GPT](...)** para más información.
+5. Consulta **Ciberfobia-api GPT** para más información.
 
 ---
 
@@ -257,7 +257,7 @@ Habilita las siguientes APIs:
 ## 📜 Soporte
 
 Si necesitas ayuda, obtén cursos, únete a la comunidad y participa en llamadas diarias.  
-Únete a la **[Comunidad Ciberfobia](https://www.skool.com/ciberfobia)** hoy mismo.
+Únete a la **[Comunidad Ciberfobia](https://www.skool.com/ciberfobia)** (proximamente).
 
 ---
 
