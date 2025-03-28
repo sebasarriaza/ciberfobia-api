@@ -136,7 +136,7 @@ Mira **[Instrucciones Detalladas](https://youtu.be/6bC93sek9v8)** para configura
 
 - Utiliza la imagen Docker:
   ```
-  stephengpope/no-code-architects-toolkit:latest
+  internetesfera/no-code-architects-toolkit:latest
   ```
 
 ### Recursos de Video
@@ -148,7 +148,7 @@ Mira **[Instrucciones Detalladas](https://youtu.be/6bC93sek9v8)** para configura
 
 ## 📋 Requisitos Previos
 
-- Una cuenta de Google Cloud. [Regístrate aquí](https://cloud.google.com/) si aún no tienes una.
+- Una cuenta de Google Cloud. [Regístrate aquí]([https://cloud.google.com/](https://cloud.google.com/free)) si aún no tienes una.
   - Los nuevos usuarios reciben $300 en créditos gratuitos.
 - Conocimientos básicos de servicios GCP como Cloud Run y Cloud Storage.
 - Terminal o editor de código para gestionar archivos.
@@ -160,7 +160,7 @@ Mira **[Instrucciones Detalladas](https://youtu.be/6bC93sek9v8)** para configura
 ### Paso 1: Crear un Proyecto en Google Cloud
 1. Accede a la [Consola de GCP](https://console.cloud.google.com/).
 2. Haz clic en el **Selector de Proyectos** y elige **Nuevo Proyecto**.
-3. Ingresa un nombre para el proyecto, por ejemplo, `Proyecto Ciberfobia`.
+3. Ingresa un nombre para el proyecto, por ejemplo, `Ciberfobia-api`.
 4. Haz clic en **Crear**.
 
 ---
@@ -169,7 +169,7 @@ Mira **[Instrucciones Detalladas](https://youtu.be/6bC93sek9v8)** para configura
 Habilita las siguientes APIs:
 - Cloud Storage API
 - Cloud Storage JSON API
-- Cloud Run API
+- Cloud Run Admin API
 
 **Cómo Habilitar:**
 1. En la Consola de GCP, ve a **APIs & Services** > **Habilitar APIs y Servicios**.
