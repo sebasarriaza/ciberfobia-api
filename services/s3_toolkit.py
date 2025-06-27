@@ -3,6 +3,7 @@ import boto3
 import logging
 from urllib.parse import urlparse
 from botocore.config import Config
+from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -28,8 +29,8 @@ def upload_to_s3(file_path: str,
                  endpoint_url: str,
                  access_key: str,
                  secret_key: str,
-                 addressing_style: str | None = None,
-                 signature_version: str | None = None):
+                 addressing_style: Optional[str] = None,
+                 signature_version: Optional[str] = None):
     session = boto3.Session(
         aws_access_key_id=access_key,
         aws_secret_access_key=secret_key,
