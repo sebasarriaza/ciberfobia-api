@@ -21,12 +21,25 @@ class GCPStorageProvider(CloudStorageProvider):
 
 class S3CompatibleProvider(CloudStorageProvider):
     def __init__(self):
+        self.bucket_name = os.getenv('S3_BUCKET_NAME')
+        self.region = os.getenv('S3_REGION')
         self.endpoint_url = os.getenv('S3_ENDPOINT_URL')
         self.access_key = os.getenv('S3_ACCESS_KEY')
         self.secret_key = os.getenv('S3_SECRET_KEY')
+        self.addressing_style = os.getenv('S3_ADDRESSING_STYLE')
+        self.signature_version = os.getenv('S3_SIGNATURE_VERSION')
 
     def upload_file(self, file_path: str) -> str:
-        return upload_to_s3(file_path, self.endpoint_url, self.access_key, self.secret_key)
+        return upload_to_s3(
+            file_path,
+            self.bucket_name,
+            self.region,
+            self.endpoint_url,
+            self.access_key,
+            self.secret_key,
+            self.addressing_style,
+            self.signature_version
+        )
 
 def get_storage_provider() -> CloudStorageProvider:
     try:
