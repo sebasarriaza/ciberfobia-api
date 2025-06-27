@@ -23,7 +23,7 @@ class S3CompatibleProvider(CloudStorageProvider):
     def __init__(self):
         self.bucket_name = os.getenv('S3_BUCKET_NAME')
         self.region = os.getenv('S3_REGION')
-        self.endpoint_url = os.getenv('S3_ENDPOINT_URL')
+        self.endpoint = os.getenv('S3_ENDPOINT_URL') or f"https://{self.region}.digitaloceanspaces.com"
         self.access_key = os.getenv('S3_ACCESS_KEY')
         self.secret_key = os.getenv('S3_SECRET_KEY')
         self.addressing_style = os.getenv('S3_ADDRESSING_STYLE')
@@ -34,7 +34,7 @@ class S3CompatibleProvider(CloudStorageProvider):
             file_path,
             self.bucket_name,
             self.region,
-            self.endpoint_url,
+            self.endpoint,
             self.access_key,
             self.secret_key,
             self.addressing_style,

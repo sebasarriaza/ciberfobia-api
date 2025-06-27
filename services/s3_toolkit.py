@@ -2,7 +2,7 @@ import os
 import boto3
 import logging
 from urllib.parse import urlparse
-from botocore.config import Config as BotoConfig
+from botocore.config import Config
 
 logger = logging.getLogger(__name__)
 
@@ -22,39 +22,31 @@ def parse_s3_url(s3_url):
         region = host_parts[1]
     return bucket_name, region
 
-def upload_to_s3(file_path, bucket_name, region, endpoint_url, access_key, secret_key, addressing_style=None, signature_version=None):
-    # Use endpoint_url from env or fallback to DO Spaces
-    if not endpoint_url:
-        if region:
-            endpoint_url = f"https://{region}.digitaloceanspaces.com"
-        else:
-            endpoint_url = "https://nyc3.digitaloceanspaces.com"  # fallback default
-
-    # Prepare boto3 config
-    boto_config_kwargs = {}
-    if addressing_style:
-        boto_config_kwargs['s3'] = {'addressing_style': addressing_style}
-    if signature_version:
-        boto_config_kwargs['signature_version'] = signature_version
-    boto_config = BotoConfig(**boto_config_kwargs) if boto_config_kwargs else None
-
+def upload_to_s3(file_path: str,
+                 bucket_name: str,
+                 region: str,
+                 endpoint_url: str,
+                 access_key: str,
+                 secret_key: str,
+                 addressing_style: str | None = None,
+                 signature_version: str | None = None):
     session = boto3.Session(
         aws_access_key_id=access_key,
         aws_secret_access_key=secret_key,
         region_name=region
     )
-
-    client_kwargs = {'endpoint_url': endpoint_url}
-    if boto_config:
-        client_kwargs['config'] = boto_config
-    client = session.client('s3', **client_kwargs)
-
+    boto_cfg = Config(
+        s3={'addressing_style': addressing_style or 'path'},
+        signature_version=signature_version or 's3v4'
+    )
+    client = session.client('s3',
+                           endpoint_url=endpoint_url,
+                           region_name=region,
+                           config=boto_cfg)
     try:
-        # Upload the file to the specified S3 bucket
         with open(file_path, 'rb') as data:
             client.upload_fileobj(data, bucket_name, os.path.basename(file_path), ExtraArgs={'ACL': 'public-read'})
-
-        file_url = f"{endpoint_url}/{bucket_name}/{os.path.basename(file_path)}"
+        file_url = f"{endpoint_url.rstrip('/')}/{bucket_name}/{os.path.basename(file_path)}"
         return file_url
     except Exception as e:
         logger.error(f"Error uploading file to S3: {e}")

@@ -18,6 +18,8 @@ S3_REGION = os.environ.get('S3_REGION', '')
 S3_ADDRESSING_STYLE = os.environ.get('S3_ADDRESSING_STYLE', '')
 S3_SIGNATURE_VERSION = os.environ.get('S3_SIGNATURE_VERSION', '')
 
+os.environ['S3_REGION'] = os.getenv('S3_REGION') or os.getenv('S3_REGION_NAME', '')
+
 def validate_env_vars(provider):
     """🔍 Validate the necessary environment variables for the selected storage provider"""
     required_vars = {
