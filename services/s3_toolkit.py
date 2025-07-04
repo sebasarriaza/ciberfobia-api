@@ -26,18 +26,24 @@ def upload_to_s3(file_path, s3_url, access_key, secret_key):
     bucket_name, region, endpoint_url = parse_s3_url(s3_url)
 
     signature_version = os.getenv('S3_SIGNATURE_VERSION')
+    addressing_style = os.getenv('S3_ADDRESSING_STYLE')
+    config_kwargs = {}
     if signature_version:
-        boto_config = Config(signature_version=signature_version)
-    else:
-        boto_config = Config()
+        config_kwargs['signature_version'] = signature_version
+    if addressing_style:
+        config_kwargs['s3'] = {'addressing_style': addressing_style}
 
     session = boto3.Session(
         aws_access_key_id=access_key,
         aws_secret_access_key=secret_key,
         region_name=region
     )
-    
-    client = session.client('s3', endpoint_url=endpoint_url, config=boto_config)
+
+    if config_kwargs:
+        boto_config = Config(**config_kwargs)
+        client = session.client('s3', endpoint_url=endpoint_url, config=boto_config)
+    else:
+        client = session.client('s3', endpoint_url=endpoint_url)
 
     try:
         # Upload the file to the specified S3 bucket
