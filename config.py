@@ -9,22 +9,16 @@ if not API_KEY:
 GCP_SA_CREDENTIALS = os.environ.get('GCP_SA_CREDENTIALS', '')
 GCP_BUCKET_NAME = os.environ.get('GCP_BUCKET_NAME', '')
 
-# ☁️ S3 (S3-compatible) environment variables
+# ☁️ S3 (DigitalOcean Spaces) environment variables
 S3_ENDPOINT_URL = os.environ.get('S3_ENDPOINT_URL', '')
 S3_ACCESS_KEY = os.environ.get('S3_ACCESS_KEY', '')
 S3_SECRET_KEY = os.environ.get('S3_SECRET_KEY', '')
-S3_BUCKET_NAME = os.environ.get('S3_BUCKET_NAME', '')
-S3_REGION = os.environ.get('S3_REGION', '')
-S3_ADDRESSING_STYLE = os.environ.get('S3_ADDRESSING_STYLE', '')
-S3_SIGNATURE_VERSION = os.environ.get('S3_SIGNATURE_VERSION', '')
-
-os.environ['S3_REGION'] = os.getenv('S3_REGION') or os.getenv('S3_REGION_NAME', '')
 
 def validate_env_vars(provider):
     """🔍 Validate the necessary environment variables for the selected storage provider"""
     required_vars = {
         'GCP': ['GCP_BUCKET_NAME', 'GCP_SA_CREDENTIALS'],
-        'S3': ['S3_BUCKET_NAME', 'S3_REGION', 'S3_ACCESS_KEY', 'S3_SECRET_KEY']
+        'S3': ['S3_ENDPOINT_URL', 'S3_ACCESS_KEY', 'S3_SECRET_KEY']
     }
     
     missing_vars = [var for var in required_vars[provider] if not os.getenv(var)]

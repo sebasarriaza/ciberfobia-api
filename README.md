@@ -100,66 +100,29 @@ docker build -t ciberfobia-api .
 
 ---
 
-### Variables de Entorno para Almacenamiento Compatible con S3 (ej. DigitalOcean Spaces, MinIO, R2, Supabase...)
+### Variables de Entorno para Almacenamiento Compatible con S3 (ej. DigitalOcean Spaces)
 
-#### `S3_BUCKET_NAME`
-- **Propósito**: Nombre del bucket en el proveedor S3.
-- **Requerida**: Obligatoria si usas almacenamiento S3-compatible.
-
-#### `S3_REGION`
-- **Propósito**: Región del bucket en el proveedor S3.
-- **Requerida**: Obligatoria si usas almacenamiento S3-compatible.
+#### `S3_ENDPOINT_URL`
+- **Propósito**: URL del endpoint del servicio S3.
+- **Requerida**: Obligatoria si usas un servicio S3.
 
 #### `S3_ACCESS_KEY`
 - **Propósito**: Clave de acceso para el servicio S3.
-- **Requerida**: Obligatoria si usas almacenamiento S3-compatible.
+- **Requerida**: Obligatoria si usas un servicio S3.
 
 #### `S3_SECRET_KEY`
 - **Propósito**: Clave secreta para el servicio S3.
-- **Requerida**: Obligatoria si usas almacenamiento S3-compatible.
-
-#### `S3_ENDPOINT_URL`
-- **Propósito**: URL del endpoint del servicio S3 (ej. `https://nyc3.digitaloceanspaces.com`, `https://<tu-endpoint>`, etc).
-- **Requerida**: Opcional. Si no se define, se usará automáticamente el endpoint de DigitalOcean Spaces según la región.
-
-#### `S3_ADDRESSING_STYLE`
-- **Propósito**: (Opcional) Forzar addressing style (`path` o `virtual`). Útil para compatibilidad con MinIO, R2, etc.
-- **Requerida**: Opcional.
-
-#### `S3_SIGNATURE_VERSION`
-- **Propósito**: (Opcional) Forzar signature version (ej. `s3v4`). Útil para compatibilidad avanzada.
-- **Requerida**: Opcional.
-
-> **Nota:** Por compatibilidad, si defines `S3_REGION_NAME` en vez de `S3_REGION`, la API lo detectará automáticamente.
-> 
-> **Compatibilidad:** Si no defines `S3_ENDPOINT_URL`, la API usará automáticamente el endpoint de DigitalOcean Spaces según la región. Si tu proveedor requiere opciones avanzadas (MinIO, R2, Supabase...), puedes usar `S3_ADDRESSING_STYLE` y `S3_SIGNATURE_VERSION`.
+- **Requerida**: Obligatoria si usas un servicio S3.
 
 ---
 
 ### Ejecución del Contenedor Docker
-
-#### Ejemplo con Google Cloud Storage (GCP)
 
 ```bash
 docker run -d -p 8080:8080 \
   -e API_KEY=tu_api_key \
   -e GCP_SA_CREDENTIALS='{"tu":"json_de_cuenta_de_servicio"}' \
   -e GCP_BUCKET_NAME=nombre_de_tu_bucket \
-  ciberfobia-api
-```
-
-#### Ejemplo con S3-compatible (MinIO, R2, Spaces, etc.)
-
-```bash
-docker run -d -p 8080:8080 \
-  -e API_KEY=tu_api_key \
-  -e S3_BUCKET_NAME=mi-bucket \
-  -e S3_REGION=us-east-1 \
-  -e S3_ACCESS_KEY=mi-access-key \
-  -e S3_SECRET_KEY=mi-secret-key \
-  -e S3_ENDPOINT_URL=https://nyc3.digitaloceanspaces.com \  # (opcional)
-  -e S3_ADDRESSING_STYLE=path \  # (opcional)
-  -e S3_SIGNATURE_VERSION=s3v4 \  # (opcional)
   ciberfobia-api
 ```
 
