@@ -15,8 +15,8 @@ def parse_s3_url(s3_url):
     # Extract region from the host
     region = parsed_url.hostname.split('.')[1]
     
-    # Construct endpoint URL
-    endpoint_url = f"https://{region}.digitaloceanspaces.com"
+    # Use endpoint from env if defined, else fallback to DO Spaces
+    endpoint_url = os.getenv('S3_ENDPOINT_URL') or f"https://{region}.digitaloceanspaces.com"
     
     return bucket_name, region, endpoint_url
 
